@@ -184,9 +184,8 @@ mod test {
         #[cfg(not(target_arch = "wasm32"))]
         let now = std::time::Instant::now();
 
-        let mut db = fontdb::Database::new();
+        let db = fontdb::Database::new();
         let locale = get_locale().unwrap();
-        db.load_system_fonts();
         FontSystem::new_with_locale_and_db(locale, db);
 
         #[cfg(not(target_arch = "wasm32"))]

@@ -371,8 +371,6 @@ impl FontSystem {
         #[cfg(not(target_arch = "wasm32"))]
         let now = std::time::Instant::now();
 
-        db.load_system_fonts();
-
         for source in fonts {
             db.load_font_source(source);
         }
