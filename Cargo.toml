@@ -1,7 +1,7 @@
 [package]
 name = "cosmic-text"
 description = "Pure Rust multi-line text handling"
-version = "0.18.2"
+version = "0.15.0"
 authors = ["Jeremy Soller <jeremy@system76.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -43,7 +43,7 @@ default-features = false
 features = ["hardcoded-data"]
 
 [features]
-default = ["std", "swash", "fontconfig"]
+default = ["std", "swash", "fontconfig", "shape-run-cache"]
 fontconfig = ["fontdb/fontconfig", "std"]
 monospace_fallback = []
 no_std = ["hashbrown", "dep:libm", "skrifa/libm", "core_maths"]
