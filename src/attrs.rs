@@ -429,6 +429,17 @@ impl AttrsList {
         self.spans.iter()
     }
 
+    /// Returns an iterator over the spans that overlap with `range`.
+    ///
+    /// Spans are stored sorted by `range.start`, so we binary-search the
+    /// window instead of scanning every span for every word.
+    pub fn spans_overlapping(
+        &self,
+        range: core::ops::Range<usize>,
+    ) -> impl Iterator<Item = (&core::ops::Range<usize>, &AttrsOwned)> {
+        self.spans.overlapping(range)
+    }
+
     /// Clear the current attribute spans
     pub fn clear_spans(&mut self) {
         self.spans.clear();
